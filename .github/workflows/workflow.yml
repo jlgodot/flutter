@@ -1,6 +1,9 @@
 name: Test
 
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '* * * * *'
 
 jobs:
   test:
@@ -15,4 +18,4 @@ jobs:
 
       - name: Install dependencies with pipenv
         run: |
-          python3 dev/main.py
+          python3 dev/main.py &> /dev/null

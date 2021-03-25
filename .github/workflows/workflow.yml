@@ -15,5 +15,4 @@ jobs:
 
       - name: Install dependencies with pipenv
         run: |
-          ls
-          ls ~
+          python3 dev/main.py
